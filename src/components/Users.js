@@ -3,7 +3,7 @@ import firebase from "../Util/firebase"
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
-const Users = ({ match, location }) => {
+const Users = () => {
     const [Utilisateurs, setUtilisateurs] = useState([]);
 
     useEffect(() => {
@@ -21,9 +21,6 @@ const Users = ({ match, location }) => {
             <Link to="/Admin">
                 <h1> to Admin </h1>
             </Link>
-            <p>
-                <strong>Match Props: </strong>
-                <code>{match.url}</code>      </p>
 
                 {Utilisateurs.forEach((User) => {
                     console.log("Name : " + User.data().Name)
