@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom'
 
 const Home = (props) => {
     const [nom, setNom] = useState('')
+    
     const Verification = async () => {
         const db = firebase.firestore()
         const Users  = db.collection('/Utilisateurs').doc(nom)
@@ -15,7 +16,7 @@ const Home = (props) => {
             doc.data()
             props.history.push('/Admin/'+doc.id)
         }
-        console.log(doc.data())
+        // console.log(doc.data())
     }
 
     return (

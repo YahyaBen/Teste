@@ -1,15 +1,15 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 
-const Admin = (props) => {
-    console.log( props.history);
-    console.log( "//");
-    console.log( props.match);
-    console.log( "//");
-    console.log( props.location);
+const Admin = (A) => {
+    console.log(A);
+    //
+    console.log(A.match);
+    //
+    console.log(A.Teste3);
     return (
         <div>
-            Bonjour Mr {props.match.params.ID}
+            Bonjour Mr {A.match.params.ID}
             <Link to="/Users">
             <h1> to User </h1>
             </Link>
@@ -17,4 +17,4 @@ const Admin = (props) => {
     )
 }
 
-export default Admin
+export default withRouter(Admin)
