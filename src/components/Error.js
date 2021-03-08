@@ -3,7 +3,7 @@ import React from 'react'
 const Error = () => {
     return (
         <div>
-            Test Error
+            <strong>Utilisateur non-identifier</strong>
         </div>
     )
 }
