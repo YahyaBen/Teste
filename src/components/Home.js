@@ -1,26 +1,29 @@
 import React, { useState } from 'react'
 import firebase from "../Util/firebase"
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import DateFirebaseNow from './DateFirebaseNow'
 
 const Home = (props) => {
+
+
     const [nom, setNom] = useState('')
-    
     const Verification = async () => {
         const db = firebase.firestore()
-        const Users  = db.collection('/Utilisateurs').doc(nom)
+        const Users = db.collection('/Utilisateurs').doc(nom)
         const doc = await Users.get()
         if (!doc.exists) {
             console.log('Utilisateur non-identifier')
             props.history.push('/Error')
         } else {
             doc.data()
-            props.history.push('/Admin/'+doc.id)
+            props.history.push('/Admin/' + doc.id)
         }
-        // console.log(doc.data())
     }
 
     return (
         <div>
+            <DateFirebaseNow />
+
             <h1> Home </h1>
             <label>Entrer votre ID </label>
             <input type="text"
