@@ -1,4 +1,4 @@
-import Test from "./Test.mjs"
+import {Test} from "./test"
 
 let A = Test.A()
 console.log(A);
