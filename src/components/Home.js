@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import firebase from "../Util/firebase"
 import { Link } from 'react-router-dom'
-import {DateFirebaseNow} from './DateFirebaseNow'
+import DateFirebaseNow from './DateFirebaseNow'
 
 const Home = (props) => {
 
