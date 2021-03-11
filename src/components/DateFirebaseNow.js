@@ -1,6 +1,7 @@
 import { React } from 'react'
 import axios from 'axios'
 import firebase from '../Util/firebase'
+import {getListe} from '../Util/test'
 const DateFirebaseNow = () => {
     //// Main timer
     const time = async () => {        
@@ -38,6 +39,27 @@ const DateFirebaseNow = () => {
                     DateDeTesteAxios : date
                 })
             })}
+            console.log(getListe("DateTestAxios"));
+
+            /// objet 
+            // const A = {
+            //     TestA: "Hey",
+            //     TestB: "Hyrkul",
+            //     TestC: new Promise((res, reg) => firebase.firestore().collection("DateTest").get()
+            //         .then(e => {
+            //             res(e.docs);
+            //         })
+            //         .catch(e => reg(e)))
+            // }
+
+            
+            // useEffect(() => {
+            //     getListe("DateTest")
+            //     .then(e=>{
+            //         e.map(U=>console.log(U.id));
+            //     }) 
+            // }, [])
+
 
         // const url = "http://recrutement.notoriety-group.com/date.php"
         // const response = await fetch(url)
@@ -46,11 +68,15 @@ const DateFirebaseNow = () => {
         // const date = new Date(data*1000)
         // console.log(date.toGMTString());
 
+
+
         // const fetchPromise = fetch("http://worldtimeapi.org/api/timezone/Europe/Paris.json").then(status => status.json()).then(statuts).catch(err => console.log(err));
         // fetchPromise.then(response => {
         //     console.log(response);
         // });
 
+
+        
         // const statuts = response => {
         //     if(response >= 200 && response.statuts <300){
         //         return Promise.resolve(response)
